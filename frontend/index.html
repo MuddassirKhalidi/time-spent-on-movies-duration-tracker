@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Time Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Movie Time Tracker</h1>
+            <p class="subtitle">Track your movie and series watching time</p>
+        </header>
+
+        <!-- Time Statistics Bar -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-value" id="totalMinutes">0</div>
+                <div class="stat-label">Minutes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalHours">0</div>
+                <div class="stat-label">Hours</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalDays">0</div>
+                <div class="stat-label">Days</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalCount">0</div>
+                <div class="stat-label">Movies/Series</div>
+            </div>
+        </div>
+
+        <!-- Time Bar Visualization -->
+        <div class="time-bar-container">
+            <div class="time-bar-label">Total Watch Time Progress</div>
+            <div class="time-bar-wrapper">
+                <div class="time-bar" id="timeBar">
+                    <span class="time-bar-text" id="timeBarText">0 hours</span>
+                </div>
+            </div>
+            <div class="time-bar-info">Goal: 100 hours</div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <h2>Add Movie or Series</h2>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for a movie or series..." 
+                    autocomplete="off"
+                >
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+
+        <!-- Watched Movies List -->
+        <div class="watched-section">
+            <h2>Watched Movies & Series</h2>
+            <div class="watched-list" id="watchedList">
+                <div class="empty-state">
+                    <p>📽️ No movies watched yet</p>
+                    <p class="empty-subtitle">Start by searching and adding a movie above!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
