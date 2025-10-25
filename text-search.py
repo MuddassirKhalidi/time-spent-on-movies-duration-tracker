@@ -45,18 +45,18 @@ Examples:
     return parser.parse_args()
 
 
-def ensure_snippets_folder():
-    """Ensure the snippets folder exists."""
-    snippets_dir = Path("snippets")
-    snippets_dir.mkdir(parents=True, exist_ok=True)
-    return snippets_dir
+def ensure_targets_folder():
+    """Ensure the targets folder exists."""
+    targets_dir = Path("targets")
+    targets_dir.mkdir(parents=True, exist_ok=True)
+    return targets_dir
 
 
-def save_frame_to_snippets(frame, snippets_dir):
-    """Save the current frame to the snippets folder with timestamp."""
+def save_frame_to_targets(frame, targets_dir):
+    """Save the current frame to the targets folder with timestamp."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")[:-3]  # Include milliseconds
-    filename = f"snippet_{timestamp}.jpg"
-    filepath = snippets_dir / filename
+    filename = f"target_{timestamp}.jpg"
+    filepath = targets_dir / filename
     
     # Convert RGB to BGR for OpenCV saving
     bgr_frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
@@ -123,9 +123,9 @@ def process_video(yoloe, video_source, args):
     
     print(f"Video properties: {width}x{height} @ {fps} FPS")
     
-    # Ensure snippets folder exists
-    snippets_dir = ensure_snippets_folder()
-    print(f"Snippets will be saved to: {snippets_dir}")
+    # Ensure targets folder exists
+    targets_dir = ensure_targets_folder()
+    print(f"Targets will be saved to: {targets_dir}")
     print("Press 's' to save current frame, 'q' or ESC to quit")
     
     frame_count = 0
@@ -169,7 +169,7 @@ def process_video(yoloe, video_source, args):
                     print("Quit requested by user")
                     break
                 elif key == ord('s'):  # 's' to save frame
-                    save_frame_to_snippets(annotated_frame.image, snippets_dir)
+                    save_frame_to_targets(annotated_frame.image, targets_dir)
                 
                 frame_count += 1
                 
