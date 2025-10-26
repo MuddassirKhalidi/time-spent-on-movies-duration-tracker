@@ -219,7 +219,8 @@ src_multimodal-search/
 │   ├── tracker.py       # Face tracker
 │   ├── utils.py
 │   ├── viewer.py        # GUI viewer
-│   └── YoloE.py         # YoloE implementation
+│   |── YoloE.py         # YoloE implementation
+|   └── vlm_analyzer.py
 ├── models/              # YoloE models (downloaded)
 ├── models-img-search/   # MXFace models
 ├── targets/             # Captured photos (auto-created)
