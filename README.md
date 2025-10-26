@@ -31,6 +31,7 @@ A comprehensive security monitoring and object detection system supporting both 
 - `modules/compositor.py` - Frame composition and visualization
 - `modules/viewer.py` - GUI frame viewer
 - `modules/bytetracker/` - BYTE tracking implementation
+- `modules/vlm_analyzer.py` - Advanced video analysis system using Google Generative AI (Gemini 2.5) for content understanding, event summarization, and automated report generation
 
 ## Installation
 
@@ -45,6 +46,7 @@ A comprehensive security monitoring and object detection system supporting both 
 - Matplotlib
 - Ultralytics YOLO
 - Memryx Neural Compiler
+- google.generativeai
 
 ### Step 1: Install Python Dependencies
 
